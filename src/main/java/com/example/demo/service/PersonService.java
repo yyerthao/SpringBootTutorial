@@ -2,23 +2,17 @@ package com.example.demo.service;
 
 import com.example.demo.dao.PersonDao;
 import com.example.demo.model.Person;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
-@Service
-public class PersonService {
-    // make sure you get the actual interface PersonDao
+public class PersonService{
+
     private final PersonDao personDao;
 
-
-// injecting
-    @Autowired
-    public PersonService(@Qualifier("fakeDao") PersonDao personDao){
+    public PersonService(PersonDao personDao){
         this.personDao = personDao;
     }
 
-    public int addPerson(Person person){
+    public int addPerson(@Qualifier("fakedao") Person person){
         return personDao.insertPerson(person);
     }
 
