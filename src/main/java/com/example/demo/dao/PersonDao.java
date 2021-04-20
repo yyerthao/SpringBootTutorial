@@ -17,7 +17,6 @@ public interface PersonDao {
         UUID id = UUID.randomUUID();
         return insertPerson(id, person);
     }
-
 }
 
 
