@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/api/v1/person")
-@RestController // this allows us methods and to expose endpoints
+@RestController // this allows us to have methods and to expose endpoints that clients can use
 public class PersonController {
 
     //need to reference to actual service
     private final PersonService personService;
 
     // dependency injection happens here
-    @Autowired
+    @Autowired // spring boot injects the actual service into this constructor
     public PersonController(PersonService personService){
         this.personService = personService;
     }
@@ -28,3 +28,5 @@ public class PersonController {
         personService.addPerson(person);
     }
 }
+
+// learn about dependency injection with amigoscode

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 // ------
-@Repository("fakeDao")
+@Repository("fakeDao") // this must match qualifier in PersonService.java
 public class FakePersonDataAccessService implements PersonDao {
 
     private static List<Person> DB = new ArrayList<>();
